@@ -1,0 +1,12 @@
+# files
+.env
+todo
+src/generator/custom-type-processor.ts
+
+# folders
+in
+out
+scripts
+
+dist
+node_modules

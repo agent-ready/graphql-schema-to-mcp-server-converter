@@ -1,0 +1,195 @@
+{
+	"type": "schema",
+	"definitions": [
+		{
+			"type": "type",
+			"name": "Post",
+			"fields": [
+				{
+					"name": "id",
+					"type": "ID!",
+					"description": "The unique identifier of the post"
+				},
+				{
+					"name": "title",
+					"type": "String!",
+					"description": "The title of the post"
+				},
+				{
+					"name": "content",
+					"type": "String!",
+					"description": "The content of the post"
+				},
+				{
+					"name": "author",
+					"type": "Author!",
+					"description": "The author of the post"
+				},
+				{
+					"name": "comments",
+					"type": "[Comment!]!",
+					"description": "The comments on the post"
+				},
+				{
+					"name": "createdAt",
+					"type": "String!",
+					"description": "The creation date of the post"
+				}
+			]
+		},
+		{
+			"type": "type",
+			"name": "Author",
+			"fields": [
+				{
+					"name": "id",
+					"type": "ID!",
+					"description": "The unique identifier of the author"
+				},
+				{
+					"name": "name",
+					"type": "String!",
+					"description": "The name of the author"
+				},
+				{
+					"name": "email",
+					"type": "String!",
+					"description": "The email of the author"
+				},
+				{
+					"name": "posts",
+					"type": "[Post!]!",
+					"description": "The posts written by the author"
+				}
+			]
+		},
+		{
+			"type": "type",
+			"name": "Comment",
+			"fields": [
+				{
+					"name": "id",
+					"type": "ID!",
+					"description": "The unique identifier of the comment"
+				},
+				{
+					"name": "content",
+					"type": "String!",
+					"description": "The content of the comment"
+				},
+				{
+					"name": "author",
+					"type": "Author!",
+					"description": "The author of the comment"
+				},
+				{
+					"name": "post",
+					"type": "Post!",
+					"description": "The post this comment belongs to"
+				},
+				{
+					"name": "createdAt",
+					"type": "String!",
+					"description": "The creation date of the comment"
+				}
+			]
+		},
+		{
+			"type": "type",
+			"name": "Query",
+			"fields": [
+				{
+					"name": "post",
+					"type": "Post",
+					"args": [
+						{
+							"name": "id",
+							"type": "ID!",
+							"description": "The ID of the post to fetch"
+						}
+					],
+					"description": "Get a post by ID"
+				},
+				{
+					"name": "posts",
+					"type": "[Post!]!",
+					"args": [
+						{
+							"name": "limit",
+							"type": "Int",
+							"description": "Maximum number of posts to return"
+						},
+						{
+							"name": "offset",
+							"type": "Int",
+							"description": "Number of posts to skip"
+						}
+					],
+					"description": "Get a list of posts"
+				},
+				{
+					"name": "author",
+					"type": "Author",
+					"args": [
+						{
+							"name": "id",
+							"type": "ID!",
+							"description": "The ID of the author to fetch"
+						}
+					],
+					"description": "Get an author by ID"
+				}
+			]
+		},
+		{
+			"type": "type",
+			"name": "Mutation",
+			"fields": [
+				{
+					"name": "createPost",
+					"type": "Post!",
+					"args": [
+						{
+							"name": "title",
+							"type": "String!",
+							"description": "The title of the post"
+						},
+						{
+							"name": "content",
+							"type": "String!",
+							"description": "The content of the post"
+						},
+						{
+							"name": "authorId",
+							"type": "ID!",
+							"description": "The ID of the author"
+						}
+					],
+					"description": "Create a new post"
+				},
+				{
+					"name": "createComment",
+					"type": "Comment!",
+					"args": [
+						{
+							"name": "content",
+							"type": "String!",
+							"description": "The content of the comment"
+						},
+						{
+							"name": "postId",
+							"type": "ID!",
+							"description": "The ID of the post"
+						},
+						{
+							"name": "authorId",
+							"type": "ID!",
+							"description": "The ID of the author"
+						}
+					],
+					"description": "Create a new comment"
+				}
+			]
+		}
+	]
+}
