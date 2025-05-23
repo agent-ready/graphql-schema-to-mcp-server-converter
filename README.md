@@ -2,13 +2,15 @@
 
 This is a simple tool that converts a GraphQL schema to a MCP Server.
 
+So far, we are expecting a graphql schema json representation.
+
 ## Setup
 
 ```
-cp in.example in
 cp .env.example .env
+cp -r in.example in
+cp -r scripts.example scripts
 cp src/generator/custom-type-processor.example.ts src/generator/custom-type-processor.ts
-cp example.scripts scripts
 mkdir out
 pnpm i
 ```

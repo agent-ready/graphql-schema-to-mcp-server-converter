@@ -157,7 +157,7 @@ ${schemaString}
 
 	return `import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { graphqlRequest } from "./utils/graphqlClient.js";
+import { graphqlRequest } from "./utils/graphql-client.js";
 import * as Schema from "./schema.js";
 ${typeImports}
 ${enumImports}
