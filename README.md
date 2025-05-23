@@ -17,7 +17,7 @@ Replace envvars in .env with your values.
 `scripts/post-process-schema.cjs` can be used to post-process the generated schema file.
 `src/generator/custom-type-processor.ts` can be used to process special fields, that you may want to skip or process differently.
 
-## Running
+## Generating the MCP Server
 
 ```
 pnpm gen
