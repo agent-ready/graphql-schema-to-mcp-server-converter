@@ -11,10 +11,13 @@ So far, we are expecting a graphql schema json representation. You can use https
 ```
 
 Then...
-Replace in/schema.json with your GraphQL schema.
-Replace envvars in .env with your values.
+
+Replace `in/schema.json` with your GraphQL schema.
+
+Replace envvars in `.en`v` with your values.
 
 `scripts/post-process-schema.cjs` can be used to post-process the generated schema file.
+
 `src/generator/custom-type-processor.ts` can be used to process special fields, that you may want to skip or process differently.
 
 ## Generating the MCP Server
