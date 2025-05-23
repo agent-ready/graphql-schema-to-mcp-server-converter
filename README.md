@@ -2,7 +2,7 @@
 
 This is a simple tool that converts a GraphQL schema to a MCP Server.
 
-So far, we are expecting a graphql schema json representation.
+So far, we are expecting a graphql schema json representation. You can use https://github.com/ritz078/transform to help convert your graphql schema to the expected format.
 
 ## Setup
 
