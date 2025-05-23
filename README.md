@@ -14,7 +14,7 @@ Then...
 
 Replace `in/schema.json` with your GraphQL schema.
 
-Replace envvars in `.en`v` with your values.
+Replace envvars in `.env` with your values.
 
 `scripts/post-process-schema.cjs` can be used to post-process the generated schema file.
 
