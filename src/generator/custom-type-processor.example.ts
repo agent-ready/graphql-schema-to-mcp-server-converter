@@ -5,7 +5,7 @@ export interface CustomTypeProcessor {
 	) => Record<string, unknown>;
 }
 
-export const CustomTypeProcessor = [
+export const CustomTypeProcessors: CustomTypeProcessor[] = [
 	// {
 	//   isSpecialField: (typeName: string | undefined) => {
 	//     return typeName && typeName.endsWith("xyz");
@@ -18,4 +18,4 @@ export const CustomTypeProcessor = [
 	//     return Object.fromEntries(fieldEntriesToProcess);
 	//   },
 	// },
-] as CustomTypeProcessor[];
+];

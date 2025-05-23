@@ -6,15 +6,11 @@ So far, we are expecting a graphql schema json representation.
 
 ## Setup
 
-```
-cp .env.example .env
-cp -r in.example in
-cp -r scripts.example scripts
-cp src/generator/custom-type-processor.example.ts src/generator/custom-type-processor.ts
-mkdir out
-pnpm i
+```sh
+./setup.sh
 ```
 
+Then...
 Replace in/schema.json with your GraphQL schema.
 Replace envvars in .env with your values.
 
